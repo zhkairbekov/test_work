@@ -1,0 +1,383 @@
+    /* Сброс стилей */
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+    
+    body {
+        font-family: Arial, sans-serif;
+        background: #f9f9f9;
+    }
+    
+    .no_scrol {
+        overflow: hidden;
+    }
+    
+    header {
+        width: 100%;
+        background: #fff;
+        border-bottom: 1px solid #ddd;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        position: fixed;
+        top: 0;
+    }
+    
+    .container {
+        max-width: 1600px!important;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 20px;
+    }
+    /* Логотип */
+    
+    .logo {
+        font-size: 20px;
+        font-weight: bold;
+        color: #333;
+        text-decoration: none;
+    }
+    /* Навигация */
+    
+    nav {
+        flex: 1;
+        margin-left: 40px;
+    }
+    
+    nav ul {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    nav ul li {
+        position: relative;
+        padding: 10px 12px;
+        background: #333;
+        color: #fff;
+        border-radius: 8px;
+    }
+    
+    nav ul li.dropdown {
+        background: #fff;
+        color: #000;
+    }
+    
+    nav ul li.dropdown:hover {
+        background: #dbdbdb;
+    }
+    
+    nav ul li a {
+        font-size: 14px;
+    }
+    
+    nav ul li .link {
+        text-decoration: none;
+        font-size: 15px;
+        transition: color 0.3s;
+        color: #fff;
+    }
+    
+    nav ul li:hover {
+        background: #585858;
+    }
+    /* Выпадающее меню */
+    
+    nav .dropdown .dropdown_link {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        color: #242424;
+        text-decoration: none;
+    }
+    
+    .dropdown .dropdown_link img {
+        height: 100%;
+    }
+    
+    .dropdown_content {
+        display: none;
+        position: absolute;
+        top: 35px;
+        left: 0;
+        background: #fff;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        min-width: 180px;
+        flex-direction: column;
+        z-index: 1000;
+    }
+    
+    nav .dropdown .dropdown_content.active {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .dropdown_content a {
+        padding: 10px 12px;
+        color: #333;
+        font-size: 14px;
+        display: block;
+    }
+    
+    .dropdown_content a:hover {
+        background: #dbdbdb;
+    }
+    
+    li.dropdown:hover .dropdown_content,
+    li.dropdown:active .dropdown_content {
+        display: flex;
+    }
+    /* Поиск */
+    
+    .search {
+        position: relative;
+    }
+    
+    .search input {
+        padding: 8px 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+    /* Кнопка для мобилки */
+    
+    .menu_toggle {
+        display: none;
+        font-size: 24px;
+        cursor: pointer;
+        background: none;
+        border: none;
+    }
+    
+    .hot_events {
+        padding: 50px 0 60px 0;
+    }
+    
+    .main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 100px;
+    }
+    
+    .main .container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .close_event {
+        text-align: start;
+        position: relative;
+        height: 100%;
+        padding: 20px 10px;
+        height: 400px;
+    }
+    
+    .close_event .slide {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .close_event h1 {
+        font-size: 42px;
+        font-weight: 400;
+        margin: 0;
+        width: 90%;
+    }
+    
+    .close_event .slide p {
+        padding: 10px 14px;
+        border: 1px solid #B9B4C0;
+        border-radius: 20px;
+        margin: 12px 0 16px 0;
+        width: max-content;
+    }
+    
+    .close_event .slide a {
+        background-color: #242424;
+        color: #fff;
+        padding: 20px;
+        border-radius: 40px;
+        width: max-content;
+        text-decoration: none;
+    }
+    
+    .close_event .slide a:hover {
+        text-decoration: underline;
+        background-color: #585858;
+    }
+    
+    .close_event .control_buttons {
+        display: flex;
+        gap: 8px;
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+    }
+    
+    .close_event__background {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+    
+    .recomend_events {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        align-items: center;
+    }
+    
+    .recomend_events h2 {
+        width: 100%;
+        text-align: start;
+        font-size: 32px;
+        font-weight: 400;
+    }
+    
+    .recomend_events .event_cards {
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 32px;
+        column-gap: 20px;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .event_cards .event_card {
+        padding: 20px;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        align-items: end;
+        width: calc(50% - 20px);
+    }
+    
+    .event_cards .event_card .img {
+        width: 90px;
+        height: 90px;
+        background-color: #d9d9d9;
+        border: 1px solid #e9e8e9;
+        border-radius: 13px;
+    }
+    
+    .event_card article {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 90px;
+    }
+    
+    .event_card article h3 {
+        font-size: 20px;
+        font-weight: 400;
+    }
+    
+    .event_card article p {
+        font-size: 14px;
+        /* margin: 20px 0 25px 0; */
+    }
+    
+    .event_card article .tags {
+        display: flex;
+        flex-direction: row;
+        gap: 6px;
+    }
+    
+    .event_card .tags .tag {
+        padding: 5px 14px;
+        font-size: 12px;
+        border: 1px solid #242424;
+        border-radius: 20px;
+        color: #242424;
+    }
+    
+    .event_card .link_event {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .pagination {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .pagination p {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 10px;
+        margin: 0;
+        cursor: pointer;
+    }
+    
+    .pagination img {
+        cursor: pointer;
+    }
+    
+    .pagination p.active {
+        padding: 13px;
+        border: 1px solid #000;
+        border-radius: 10000px;
+    }
+    
+    .menu_events {
+        padding: 60px 0;
+        height: 100vh;
+    }
+    /* Адаптив */
+    
+    @media (max-width: 1100px) {
+        .main {
+            margin-top: 67px;
+        }
+        nav {
+            display: block;
+            position: absolute;
+            top: 60px;
+            left: -100%;
+            background: #fff;
+            width: 100%;
+            padding: 20px;
+            border-top: 1px solid #ddd;
+            margin: 0;
+            transition: 0.3s;
+        }
+        nav.active {
+            left: 0;
+        }
+        nav ul {
+            flex-direction: column;
+            gap: 10px;
+        }
+        nav ul li {
+            width: 100%;
+        }
+        .menu_toggle {
+            display: block;
+        }
+        .search {
+            display: none;
+        }
+    }
+    
+    @media (max-width: 640px) {
+        .event_cards .event_card {
+            width: 300px;
+        }
+    }

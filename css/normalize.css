@@ -1,0 +1,120 @@
+/* === Normalize CSS (минимальная версия) === */
+
+
+/* 1. Убираем внутренние отступы и маргины */
+
+*,
+ul,
+nav,
+li,
+ol,
+a,
+p,
+h1,
+h2,
+h3,
+h4 {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* 2. Единый стиль текста */
+
+html {
+    line-height: 1.15;
+    /* как в normalize.css */
+    -webkit-text-size-adjust: 100%;
+    /* запрет изменения размера текста iOS */
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    background: #fff;
+    color: #000;
+}
+
+
+/* 3. Заголовки и параграфы */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+
+/* 4. Ссылки */
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* 5. Списки */
+
+ul,
+ol {
+    list-style: none;
+}
+
+
+/* 6. Изображения */
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* 7. Формы */
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+
+/* 8. Кнопки */
+
+button {
+    cursor: pointer;
+    background: transparent;
+}
+
+
+/* 9. Таблицы */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+/* 10. Поля формы (чтобы одинаково выглядели в разных браузерах) */
+
+ ::-webkit-input-placeholder {
+    color: #999;
+}
+
+ :-ms-input-placeholder {
+    color: #999;
+}
+
+ ::placeholder {
+    color: #999;
+}

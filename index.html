@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Афиша мероприятий</title>
+    <meta name="description" content="Афиша мероприятий и новости">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    </body>
+</head>
+
+<body>
+
+    <!-- Шапка -->
+    <header class="site_header">
+        <div class="container">
+            <a href="#" class="logo">Логотип</a>
+            <button class="menu_toggle">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="#" class="link">Театр</a></li>
+                    <li><a href="#" class="link">Музыка</a></li>
+                    <li><a href="#" class="link">Выставки</a></li>
+                    <li><a href="#" class="link">Кино</a></li>
+                    <li><a href="#" class="link">Фестивали и праздники</a></li>
+                    <li><a href="#" class="link">Образовательные мероприятия</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown_link">Учреждения <img src="images/drop_down.png"></a>
+                        <div class="dropdown_content">
+                            <a href="#">Учреждение 1</a>
+                            <a href="#">Учреждение 2</a>
+                            <a href="#">Учреждение 3</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown_link">Новости <img src="images/drop_down.png"></a>
+                        <div class="dropdown_content">
+                            <a href="#">Новость 1</a>
+                            <a href="#">Новость 2</a>
+                            <a href="#">Новость 3</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <div class="search">
+                <input type="text" placeholder="Поиск...">
+                <button>
+                    <img src="images/find.png" alt="find button">
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="hot_events">
+            <div class="container">
+                <div class="row">
+                    <div class="close_event col-xl-6">
+                        <div class="slide">
+                            <h1>Заголовок ближайшего мероприятия</h1>
+                            <p class="date">12-15 сентября</p>
+                            <a href="#">Подробнее</a>
+                        </div>
+                        <div class="control_buttons">
+                            <img src="images/arrow-left.png" alt="switch to left slide">
+                            <img src="images/arrow-right.png" alt="switch to right slide">
+                        </div>
+                        <img src="images/start_window_img.png" alt="background" class="close_event__background">
+                    </div>
+                    <div class="recomend_events col-xl-6">
+                        <h2>Рекомендуемые редакцией мероприятия</h2>
+                        <div class="event_cards">
+                            <div class="event_card">
+                                <div class="img"></div>
+                                <article>
+                                    <h3>Заголовок</h3>
+                                    <p class="date">6 сентября - 14:00</p>
+                                    <div class="tags">
+                                        <p class="tag">тег</p>
+                                        <p class="tag">тег</p>
+                                        <p class="tag">тег</p>
+                                    </div>
+                                </article>
+                                <a href="#"><img src="images/link_arrow.png" alt="Link to event" class="link_event"></a>
+                            </div>
+                            <div class="event_card">
+                                <div class="img"></div>
+                                <article>
+                                    <h3>Заголовок</h3>
+                                    <p class="date">6 сентября - 14:00</p>
+                                    <div class="tags">
+                                        <p class="tag">тег</p>
+                                        <p class="tag">тег</p>
+                                        <p class="tag">тег</p>
+                                    </div>
+                                </article>
+                                <a href="#"><img src="images/link_arrow.png" alt="Link to event" class="link_event"></a>
+                            </div>
+                            <div class="event_card">
+                                <div class="img"></div>
+                                <article>
+                                    <h3>Заголовок</h3>
+                                    <p class="date">6 сентября - 14:00</p>
+                                    <div class="tags">
+                                        <p class="tag">тег</p>
+                                        <p class="tag">тег</p>
+                                        <p class="tag">тег</p>
+                                    </div>
+                                </article>
+                                <a href="#"><img src="images/link_arrow.png" alt="Link to event" class="link_event"></a>
+                            </div>
+                            <div class="event_card">
+                                <div class="img"></div>
+                                <article>
+                                    <h3>Заголовок</h3>
+                                    <p class="date">6 сентября - 14:00</p>
+                                    <div class="tags">
+                                        <p class="tag">тег</p>
+                                        <p class="tag">тег</p>
+                                        <p class="tag">тег</p>
+                                    </div>
+                                </article>
+                                <a href="#"><img src="images/link_arrow.png" alt="Link to event" class="link_event"></a>
+                            </div>
+                        </div>
+                        <div class="pagination">
+                            <img src="images/pagination_arrow_left.png" alt="prev">
+                            <p>1</p>
+                            <p class="active">2</p>
+                            <p>3</p>
+                            <p>4</p>
+                            <p>...</p>
+                            <p>108</p>
+                            <img src="images/pagination_arrow_right.png" alt="next">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="menu_events">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+
+                    </div>
+                    <div class="col-md-8">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
