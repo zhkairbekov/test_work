@@ -1,163 +1,505 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Афиша мероприятий">
+    <meta name="keywords" content="афиша, мероприятия, театр, концерты, выставки">
     <title>Афиша мероприятий</title>
-    <meta name="description" content="Афиша мероприятий и новости">
-
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/main.css">
+    <meta name="description" content="Афиша мероприятий: театр, музыка, выставки, кино, фестивали. Актуальные события и новости культурной жизни города.">
+    
+    <!--Bootstrap CSS-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    </body>
+
+    <!--Normalize CSS-->
+    <link rel="stylesheet" href="css/normalize.css">
+    
+    <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
-
-    <!-- Шапка -->
-    <header class="site_header">
+    <!--Шапка сайта-->
+    <header class="site-header">
         <div class="container">
-            <a href="#" class="logo">Логотип</a>
-            <button class="menu_toggle">☰</button>
-            <nav>
-                <ul>
-                    <li><a href="#" class="link">Театр</a></li>
-                    <li><a href="#" class="link">Музыка</a></li>
-                    <li><a href="#" class="link">Выставки</a></li>
-                    <li><a href="#" class="link">Кино</a></li>
-                    <li><a href="#" class="link">Фестивали и праздники</a></li>
-                    <li><a href="#" class="link">Образовательные мероприятия</a></li>
-                    <li class="dropdown">
-                        <a class="dropdown_link">Учреждения <img src="images/drop_down.png"></a>
-                        <div class="dropdown_content">
-                            <a href="#">Учреждение 1</a>
-                            <a href="#">Учреждение 2</a>
-                            <a href="#">Учреждение 3</a>
+            <a href="#" class="site-header__logo">Логотип</a>
+            
+            <button class="site-header__menu-toggle" id="menuToggle">☰</button>
+            
+            <nav class="site-header__nav" id="nav">
+                <ul class="site-header__nav-list">
+                    <li class="site-header__nav-item">
+                        <a href="#" class="site-header__nav-link">Театр</a>
+                    </li>
+                    <li class="site-header__nav-item">
+                        <a href="#" class="site-header__nav-link">Музыка</a>
+                    </li>
+                    <li class="site-header__nav-item">
+                        <a href="#" class="site-header__nav-link">Выставки</a>
+                    </li>
+                    <li class="site-header__nav-item">
+                        <a href="#" class="site-header__nav-link">Кино</a>
+                    </li>
+                    <li class="site-header__nav-item">
+                        <a href="#" class="site-header__nav-link">Фестивали и праздники</a>
+                    </li>
+                    <li class="site-header__nav-item">
+                        <a href="#" class="site-header__nav-link">Образовательные мероприятия</a>
+                    </li>
+                    <li class="site-header__nav-item site-header__nav-item--dropdown">
+                        <a class="site-header__dropdown-link">
+                            Учреждения 
+                            <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
+                                <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </a>
+                        <div class="site-header__dropdown-content">
+                            <a href="#">Театр оперы и балета</a>
+                            <a href="#">Филармония</a>
+                            <a href="#">Музей искусств</a>
+                            <a href="#">Дом культуры</a>
                         </div>
                     </li>
-                    <li class="dropdown">
-                        <a class="dropdown_link">Новости <img src="images/drop_down.png"></a>
-                        <div class="dropdown_content">
-                            <a href="#">Новость 1</a>
-                            <a href="#">Новость 2</a>
-                            <a href="#">Новость 3</a>
+                    <li class="site-header__nav-item site-header__nav-item--dropdown">
+                        <a class="site-header__dropdown-link">
+                            Новости 
+                            <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
+                                <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </a>
+                        <div class="site-header__dropdown-content">
+                            <a href="#">Культурные новости</a>
+                            <a href="#">Анонсы мероприятий</a>
+                            <a href="#">Интервью</a>
                         </div>
                     </li>
                 </ul>
             </nav>
-            <div class="search">
-                <input type="text" placeholder="Поиск...">
-                <button>
+            
+            <div class="site-header__search">
+                <input type="text" class="site-header__search-input" placeholder="Поиск мероприятий...">
+                <button class="site-header__search-btn">
                     <img src="images/find.png" alt="find button">
                 </button>
             </div>
         </div>
     </header>
 
+    <!--Основной контент-->
     <main class="main">
-        <section class="hot_events">
+        <!--Блок горячих событий-->
+        <section class="hot-events">
             <div class="container">
-                <div class="row">
-                    <div class="close_event col-xl-6">
-                        <div class="slide">
-                            <h1>Заголовок ближайшего мероприятия</h1>
-                            <p class="date">12-15 сентября</p>
-                            <a href="#">Подробнее</a>
+                <div class="hot-events__container">
+                    <div class="hot-events__featured">
+                        <div class="hot-events__slide">
+                            <h1 class="hot-events__featured-title">Заголовок ближайшего мероприятия</h1>
+                            <span class="hot-events__featured-date">12-15 сентября</span>
+                            <a href="#" class="btn--primary">Подробнее</a>
                         </div>
-                        <div class="control_buttons">
-                            <img src="images/arrow-left.png" alt="switch to left slide">
-                            <img src="images/arrow-right.png" alt="switch to right slide">
+                        <div class="hot-events__controls">
+                            <button class="hot-events__control-btn">‹</button>
+                            <button class="hot-events__control-btn">›</button>
                         </div>
-                        <img src="images/start_window_img.png" alt="background" class="close_event__background">
                     </div>
-                    <div class="recomend_events col-xl-6">
-                        <h2>Рекомендуемые редакцией мероприятия</h2>
-                        <div class="event_cards">
-                            <div class="event_card">
-                                <div class="img"></div>
-                                <article>
-                                    <h3>Заголовок</h3>
-                                    <p class="date">6 сентября - 14:00</p>
-                                    <div class="tags">
-                                        <p class="tag">тег</p>
-                                        <p class="tag">тег</p>
-                                        <p class="tag">тег</p>
+                    
+                    <div class="hot-events__recommended">
+                        <h2 class="hot-events__recommended-title">Рекомендуемые редакцией мероприятия</h2>
+                        <div class="hot-events__cards">
+                            <article class="event-card">
+                                <div class="event-card__image"></div>
+                                <div class="event-card__content">
+                                    <h3 class="event-card__title">Заголовок</h3>
+                                    <time class="event-card__date">6 сентября - 14:00</time>
+                                    <div class="event-card__tags">
+                                        <span class="event-card__tag">тег</span>
+                                        <span class="event-card__tag">тег</span>
+                                        <span class="event-card__tag">тег</span>
                                     </div>
-                                </article>
-                                <a href="#"><img src="images/link_arrow.png" alt="Link to event" class="link_event"></a>
-                            </div>
-                            <div class="event_card">
-                                <div class="img"></div>
-                                <article>
-                                    <h3>Заголовок</h3>
-                                    <p class="date">6 сентября - 14:00</p>
-                                    <div class="tags">
-                                        <p class="tag">тег</p>
-                                        <p class="tag">тег</p>
-                                        <p class="tag">тег</p>
+                                </div>
+                                <a href="#" class="event-card__link"><img src="images/link_arrow.png" alt="link"></a>
+                            </article>
+                            <article class="event-card">
+                                <div class="event-card__image"></div>
+                                <div class="event-card__content">
+                                    <h3 class="event-card__title">Заголовок</h3>
+                                    <time class="event-card__date">6 сентября - 14:00</time>
+                                    <div class="event-card__tags">
+                                        <span class="event-card__tag">тег</span>
+                                        <span class="event-card__tag">тег</span>
+                                        <span class="event-card__tag">тег</span>
                                     </div>
-                                </article>
-                                <a href="#"><img src="images/link_arrow.png" alt="Link to event" class="link_event"></a>
-                            </div>
-                            <div class="event_card">
-                                <div class="img"></div>
-                                <article>
-                                    <h3>Заголовок</h3>
-                                    <p class="date">6 сентября - 14:00</p>
-                                    <div class="tags">
-                                        <p class="tag">тег</p>
-                                        <p class="tag">тег</p>
-                                        <p class="tag">тег</p>
+                                </div>
+                                <a href="#" class="event-card__link"><img src="images/link_arrow.png" alt="link"></a>
+                            </article>
+                            <article class="event-card">
+                                <div class="event-card__image"></div>
+                                <div class="event-card__content">
+                                    <h3 class="event-card__title">Заголовок</h3>
+                                    <time class="event-card__date">6 сентября - 14:00</time>
+                                    <div class="event-card__tags">
+                                        <span class="event-card__tag">тег</span>
+                                        <span class="event-card__tag">тег</span>
+                                        <span class="event-card__tag">тег</span>
                                     </div>
-                                </article>
-                                <a href="#"><img src="images/link_arrow.png" alt="Link to event" class="link_event"></a>
-                            </div>
-                            <div class="event_card">
-                                <div class="img"></div>
-                                <article>
-                                    <h3>Заголовок</h3>
-                                    <p class="date">6 сентября - 14:00</p>
-                                    <div class="tags">
-                                        <p class="tag">тег</p>
-                                        <p class="tag">тег</p>
-                                        <p class="tag">тег</p>
+                                </div>
+                                <a href="#" class="event-card__link"><img src="images/link_arrow.png" alt="link"></a>
+                            </article>
+                            <article class="event-card">
+                                <div class="event-card__image"></div>
+                                <div class="event-card__content">
+                                    <h3 class="event-card__title">Заголовок</h3>
+                                    <time class="event-card__date">6 сентября - 14:00</time>
+                                    <div class="event-card__tags">
+                                        <span class="event-card__tag">тег</span>
+                                        <span class="event-card__tag">тег</span>
+                                        <span class="event-card__tag">тег</span>
                                     </div>
-                                </article>
-                                <a href="#"><img src="images/link_arrow.png" alt="Link to event" class="link_event"></a>
-                            </div>
+                                </div>
+                                <a href="#" class="event-card__link"><img src="images/link_arrow.png" alt="link"></a>
+                            </article>
                         </div>
-                        <div class="pagination">
-                            <img src="images/pagination_arrow_left.png" alt="prev">
-                            <p>1</p>
-                            <p class="active">2</p>
-                            <p>3</p>
-                            <p>4</p>
-                            <p>...</p>
-                            <p>108</p>
-                            <img src="images/pagination_arrow_right.png" alt="next">
+                        
+                        <div class="recomended__pagination pagination">
+                            <button class="pagination__btn">‹</button>
+                            <button class="pagination__page pagination__page--active">1</button>
+                            <button class="pagination__page">2</button>
+                            <button class="pagination__page">3</button>
+                            <button class="pagination__page">4</button>
+                            <span>...</span>
+                            <button class="pagination__page">108</button>
+                            <button class="pagination__btn">›</button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="menu_events">
+
+        <!--Фильтры и календарь-->
+        <section class="filters">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-
+                <div class="filters__container">
+                    <aside class="filters__sidebar">
+                        <div class="filters__section">
+                            <h3 class="filters__section-title">Дата</h3>
+                            <div class="calendar">
+                                <div class="calendar__header">
+                                    <div class="calendar__date-selector">
+                                        <div class="calendar__month-selector">
+                                            <span>Август</span>
+                                            <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
+                                                <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2"/>
+                                            </svg>
+                                        </div>
+                                        <div class="calendar__year-selector">
+                                            <span>2025</span>
+                                            <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
+                                                <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="calendar__grid">
+                                    <div class="calendar__day-header">Пн</div>
+                                    <div class="calendar__day-header">Вт</div>
+                                    <div class="calendar__day-header">Ср</div>
+                                    <div class="calendar__day-header">Чт</div>
+                                    <div class="calendar__day-header">Пт</div>
+                                    <div class="calendar__day-header">Сб</div>
+                                    <div class="calendar__day-header">Вс</div>
+                                    
+                                    <button class="calendar__day">1</button>
+                                    <button class="calendar__day">2</button>
+                                    <button class="calendar__day">3</button>
+                                    <button class="calendar__day">4</button>
+                                    <button class="calendar__day">5</button>
+                                    <button class="calendar__day">6</button>
+                                    <button class="calendar__day">7</button>
+                                    <button class="calendar__day">8</button>
+                                    <button class="calendar__day">9</button>
+                                    <button class="calendar__day">10</button>
+                                    <button class="calendar__day">11</button>
+                                    <button class="calendar__day">12</button>
+                                    <button class="calendar__day">13</button>
+                                    <button class="calendar__day">14</button>
+                                    <button class="calendar__day">15</button>
+                                    <button class="calendar__day calendar__day--today">16</button>
+                                    <button class="calendar__day">17</button>
+                                    <button class="calendar__day">18</button>
+                                    <button class="calendar__day">19</button>
+                                    <button class="calendar__day">20</button>
+                                    <button class="calendar__day calendar__day--active">21</button>
+                                    <button class="calendar__day">22</button>
+                                    <button class="calendar__day">23</button>
+                                    <button class="calendar__day">24</button>
+                                    <button class="calendar__day">25</button>
+                                    <button class="calendar__day">26</button>
+                                    <button class="calendar__day">27</button>
+                                    <button class="calendar__day">28</button>
+                                    <button class="calendar__day">29</button>
+                                    <button class="calendar__day">30</button>
+                                    <button class="calendar__day">31</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="filters__section">
+                            <h3 class="filters__section-title">Учреждения</h3>
+                            <div class="filters__checkbox-group">
+                                <label class="filters__checkbox">
+                                    <input type="checkbox" checked>
+                                    <span>Пункт категории</span>
+                                </label>
+                                <label class="filters__checkbox">
+                                    <input type="checkbox">
+                                    <span>Пункт категории</span>
+                                </label>
+                                <label class="filters__checkbox">
+                                    <input type="checkbox">
+                                    <span>Пункт категории</span>
+                                </label>
+                                <label class="filters__checkbox">
+                                    <input type="checkbox" checked>
+                                    <span>Пункт категории</span>
+                                </label>
+                                <label class="filters__checkbox">
+                                    <input type="checkbox">
+                                    <span>Пункт категории</span>
+                                </label>
+                                <label class="filters__checkbox">
+                                    <input type="checkbox">
+                                    <span>Пункт категории</span>
+                                </label>
+                                <button>Ещё</button>
+                            </div>
+                        </div>
+                        
+                        <div class="filters__section">
+                            <h3 class="filters__section-title">Категории</h3>
+                            <div class="filters__checkbox-group">
+                                <label class="filters__checkbox">
+                                    <input type="checkbox" checked>
+                                    <span>Пункт категории</span>
+                                </label>
+                                <label class="filters__checkbox">
+                                    <input type="checkbox">
+                                    <span>Пункт категории</span>
+                                </label>
+                                <label class="filters__checkbox">
+                                    <input type="checkbox">
+                                    <span>Пункт категории</span>
+                                </label>
+                                <label class="filters__checkbox">
+                                    <input type="checkbox">
+                                    <span>Пункт категории</span>
+                                </label>
+                                <label class="filters__checkbox">
+                                    <input type="checkbox">
+                                    <span>Пункт категории</span>
+                                </label>
+                                <label class="filters__checkbox">
+                                    <input type="checkbox">
+                                    <span>Пункт категории</span>
+                                </label>
+                                <button>Ещё</button>
+                            </div>
+                        </div>
+                    </aside>
+                    
+                    <div class="filters__content">
+                        <div class="filters__toolbar">
+                            <div class="filters__pills">
+                                <a href="#" class="filters__pill filters__pill--active">Выбранный пункт фильтра</a>
+                                <a href="#" class="filters__pill">Выбранный пункт фильтра</a>
+                                <a href="#" class="filters__pill">Выбранный пункт фильтра</a>
+                                <button class="filters__pill">Сбросить фильтр</button>
+                            </div>
+                            <select class="filters__sort">
+                                <option>Сортировать</option>
+                                <option>По дате</option>
+                                <option>По популярности</option>
+                                <option>По названию</option>
+                            </select>
+                        </div>
+                        
+                        <!--Список мероприятий-->
+                        <div class="events-list">
+                            <article class="event-card">
+                                <div class="event-card__image"></div>
+                                <div class="event-card__content">
+                                    <h3 class="event-card__title">Заголовок</h3>
+                                    <time class="event-card__date">6 сентября - 14:00</time>
+                                    <div class="event-card__tags">
+                                        <span class="event-card__tag">тег</span>
+                                        <span class="event-card__tag">тег</span>
+                                        <span class="event-card__tag">тег</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="event-card__link"><img src="images/link_arrow.png" alt="link"></a>
+                            </article>
+                            <article class="event-card">
+                                <div class="event-card__image"></div>
+                                <div class="event-card__content">
+                                    <h3 class="event-card__title">Заголовок</h3>
+                                    <time class="event-card__date">6 сентября - 14:00</time>
+                                    <div class="event-card__tags">
+                                        <span class="event-card__tag">тег</span>
+                                        <span class="event-card__tag">тег</span>
+                                        <span class="event-card__tag">тег</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="event-card__link"><img src="images/link_arrow.png" alt="link"></a>
+                            </article>
+                            <article class="event-card">
+                                <div class="event-card__image"></div>
+                                <div class="event-card__content">
+                                    <h3 class="event-card__title">Заголовок</h3>
+                                    <time class="event-card__date">6 сентября - 14:00</time>
+                                    <div class="event-card__tags">
+                                        <span class="event-card__tag">тег</span>
+                                        <span class="event-card__tag">тег</span>
+                                        <span class="event-card__tag">тег</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="event-card__link"><img src="images/link_arrow.png" alt="link"></a>
+                            </article>
+                        </div>
+                        
+                        <div class="menu__pagination pagination">
+                            <button class="pagination__btn">‹</button>
+                            <button class="pagination__page  pagination__page--active">1</button>
+                            <button class="pagination__page">2</button>
+                            <button class="pagination__page">3</button>
+                            <button class="pagination__page">4</button>
+                            <span>...</span>
+                            <button class="pagination__page">108</button>
+                            <button class="pagination__btn">›</button>
+                        </div>
+                        <div class="tags-cloud__container">
+                            <a href="#" class="tags-cloud__tag">тег</a>
+                            <a href="#" class="tags-cloud__tag">тег</a>
+                            <a href="#" class="tags-cloud__tag">тег</a>
+                            <a href="#" class="tags-cloud__tag">тег</a>
+                            <a href="#" class="tags-cloud__tag">тег</a>
+                            <a href="#" class="tags-cloud__tag">тег</a>
+                            <a href="#" class="tags-cloud__tag">тег</a>
+                            <a href="#" class="tags-cloud__tag">тег</a>
+                            <a href="#" class="tags-cloud__tag">тег</a>
+                            <a href="#" class="tags-cloud__tag">тег</a>
+                            <a href="#" class="tags-cloud__tag">тег</a>
+                            <a href="#" class="tags-cloud__tag">тег</a>
+                            <a href="#" class="tags-cloud__tag">тег</a>
+                            <a href="#" class="tags-cloud__tag">тег</a>
+                            <a href="#" class="tags-cloud__tag">все теги</a>
+                        </div>
                     </div>
-                    <div class="col-md-8">
-
+                    <div class="none"></div>
+                    <!--Новости и статьи-->
+                    <div class="news">
+                        <div class="container">
+                            <div class="news__header">
+                                <button class="news__tab news__tab--active" data-tab="news">Новости</button>
+                                <button class="news__tab" data-tab="articles">Авторские статьи</button>
+                                <button class="news__tab" data-tab="reviews">Меры поддержки</button>
+                            </div>
+                            
+                            <div class="news__content" id="news-content">
+                                <div class="news__grid">
+                                    <article class="news-card">
+                                        <div class="news-card__image"></div>
+                                        <div class="news-card__content">
+                                            <h3 class="news-card__title">Заголовок новости</h3>
+                                            <p class="news-card__excerpt">Краткое описание новости или статьи. Несколько строк текста для привлечения внимания читателя...</p>
+                                            <a href="#" class="news-card__link">Читать подробнее</a>
+                                        </div>
+                                    </article>
+                                    
+                                    <article class="news-card">
+                                        <div class="news-card__image"></div>
+                                        <div class="news-card__content">
+                                            <h3 class="news-card__title">Интервью с режиссером</h3>
+                                            <p class="news-card__excerpt">Эксклюзивное интервью с известным театральным режиссером о новой постановке и планах на сезон...</p>
+                                            <a href="#" class="news-card__link">Читать подробнее</a>
+                                        </div>
+                                    </article>
+                                    
+                                    <article class="news-card">
+                                        <div class="news-card__image"></div>
+                                        <div class="news-card__content">
+                                            <h3 class="news-card__title">Фестиваль искусств</h3>
+                                            <p class="news-card__excerpt">Анонс крупнейшего городского фестиваля искусств. Программа мероприятий и участники события...</p>
+                                            <a href="#" class="news-card__link">Читать подробнее</a>
+                                        </div>
+                                    </article>
+                                </div>
+                                
+                                <div class="news__pagination pagination">
+                                    <button class="pagination__btn">‹</button>
+                                    <button class="pagination__page pagination__page--active">1</button>
+                                    <button class="pagination__page">2</button>
+                                    <button class="pagination__page">3</button>
+                                    <button class="pagination__page">4</button>
+                                    <span>...</span>
+                                    <button class="pagination__page">108</button>
+                                    <button class="pagination__btn">›</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
+    <!--Подвал-->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="site-footer__container">
+                <div class="site-footer__section  text-start">
+                    <a href="#" class="site-footer__logo">Логотип</a>
+                    <div class="site-footer__contacts">
+                        <a href="#" class="site-footer__contact">test@mail.ru</a>
+                        <a href="#" class="site-footer__contact">+7 900 444 55 88</a>
+                    </div>
+                </div>
+                
+                <div class="site-footer__social">
+                    <a href="https://www.youtube.com/" class="site-footer__social-link">
+                        <img src="images/youtube.png" alt="youtube icon">
+                    </a>
+                    <a href="https://t.me/kairbekoff" class="site-footer__social-link">
+                        <img src="images/telegram.png" alt="telegram icon">
+                    </a>
+                </div>
+                
+                <div class="site-footer__section">
+                    <h3 class="site-footer__section-title">Облако тегов: </h3>
+                    <div class="site-footer__tags">
+                        <a href="#" class="site-footer__tag">тег</a>
+                        <a href="#" class="site-footer__tag">тег</a>
+                        <a href="#" class="site-footer__tag">тег</a>
+                        <a href="#" class="site-footer__tag">тег</a>
+                        <a href="#" class="site-footer__tag">тег</a>
+                        <a href="#" class="site-footer__tag">тег</a>
+                        <a href="#" class="site-footer__tag">тег</a>
+                        <a href="#" class="site-footer__tag">тег</a>
+                        <a href="#" class="site-footer__tag">тег</a>
+                        <a href="#" class="site-footer__tag">тег</a>
+                    </div>
+                    <p>SEO-текст с кратким описанием сайта</p>
+                    <p>©Все права защищены, 2025</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--Bootstrap JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    
+    <!--jQuery-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
     <script src="js/main.js"></script>
 </body>
-
 </html>

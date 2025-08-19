@@ -1,36 +1,62 @@
-<header class="site_header">
+<header class="site-header">
     <div class="container">
-        <a href="#" class="logo">Логотип</a>
-        <button class="menu_toggle">☰</button>
-        <nav>
-            <ul>
-                <li><a href="#" class="link">Театр</a></li>
-                <li><a href="#" class="link">Музыка</a></li>
-                <li><a href="#" class="link">Выставки</a></li>
-                <li><a href="#" class="link">Кино</a></li>
-                <li><a href="#" class="link">Фестивали и праздники</a></li>
-                <li><a href="#" class="link">Образовательные мероприятия</a></li>
-                <li class="dropdown">
-                    <a class="dropdown_link">Учреждения <img src="images/drop_down.png"></a>
-                    <div class="dropdown_content">
-                        <a href="#">Учреждение 1</a>
-                        <a href="#">Учреждение 2</a>
-                        <a href="#">Учреждение 3</a>
+        <a href="#" class="site-header__logo">Логотип</a>
+        
+        <button class="site-header__menu-toggle" id="menuToggle">☰</button>
+        
+        <nav class="site-header__nav" id="nav">
+            <ul class="site-header__nav-list">
+                <li class="site-header__nav-item">
+                    <a href="#" class="site-header__nav-link">Театр</a>
+                </li>
+                <li class="site-header__nav-item">
+                    <a href="#" class="site-header__nav-link">Музыка</a>
+                </li>
+                <li class="site-header__nav-item">
+                    <a href="#" class="site-header__nav-link">Выставки</a>
+                </li>
+                <li class="site-header__nav-item">
+                    <a href="#" class="site-header__nav-link">Кино</a>
+                </li>
+                <li class="site-header__nav-item">
+                    <a href="#" class="site-header__nav-link">Фестивали и праздники</a>
+                </li>
+                <li class="site-header__nav-item">
+                    <a href="#" class="site-header__nav-link">Образовательные мероприятия</a>
+                </li>
+                <li class="site-header__nav-item site-header__nav-item--dropdown">
+                    <a class="site-header__dropdown-link">
+                        Учреждения 
+                        <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
+                            <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </a>
+                    <div class="site-header__dropdown-content">
+                        <a href="#">Театр оперы и балета</a>
+                        <a href="#">Филармония</a>
+                        <a href="#">Музей искусств</a>
+                        <a href="#">Дом культуры</a>
                     </div>
                 </li>
-                <li class="dropdown">
-                    <a class="dropdown_link">Новости <img src="images/drop_down.png"></a>
-                    <div class="dropdown_content">
-                        <a href="#">Новость 1</a>
-                        <a href="#">Новость 2</a>
-                        <a href="#">Новость 3</a>
+                <li class="site-header__nav-item site-header__nav-item--dropdown">
+                    <a class="site-header__dropdown-link">
+                        Новости 
+                        <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
+                            <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </a>
+                    <div class="site-header__dropdown-content">
+                        <a href="#">Культурные новости</a>
+                        <a href="#">Анонсы мероприятий</a>
+                        <a href="#">Интервью</a>
                     </div>
                 </li>
             </ul>
         </nav>
-        <div class="search">
-            <input type="text" placeholder="Поиск...">
-            <button>
+        
+        <div class="site-header__search">
+            <input type="text" class="site-header__search-input" placeholder="Поиск мероприятий...">
+            <button class="site-header__search-btn">
                 <img src="images/find.png" alt="find button">
             </button>
         </div>
