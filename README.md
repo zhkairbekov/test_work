@@ -96,4 +96,4 @@ project/
 
 ## Оригинальное ТЗ
 - Либо [по ссылке](https://bitroid24.ru/~b7F38).
-- Либо [открыть документ](docs/technical-task.docx)
+- Либо [открыть документ](docs/technical-task.md)
